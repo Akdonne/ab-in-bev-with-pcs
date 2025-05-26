@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vendor Info</title>
+  <style>
+    body { font-family: Arial; background: #f9f9f9; padding: 40px; text-align: center; }
+    .card {
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+    .card h2 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2 id="title">Vendor Info</h2>
+    <p><strong>Vendor:</strong> Default POSM Vendor</p>
+    <p><strong>Email:</strong> vendor@default.com</p>
+    <p><strong>Phone:</strong> 0000000000</p>
+    <p><strong>Location:</strong> Multiple Locations</p>
+    <p><strong>Capability:</strong> POSM & Production</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const brand = params.get('brand');
+    const category = params.get('category');
+    const asset = params.get('asset');
+    document.getElementById("title").innerText = `Vendor for ${brand} → ${category} → ${asset}`;
+  </script>
+</body>
+</html>

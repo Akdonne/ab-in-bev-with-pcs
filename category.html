@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select Category</title>
+  <style>
+    body { font-family: Arial; text-align: center; background: #fff; padding: 40px; }
+    h1 { margin-bottom: 30px; }
+    .grid { display: flex; gap: 20px; justify-content: center; }
+    .btn { padding: 20px 40px; font-size: 18px; border-radius: 8px; background: #007BFF; color: white; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1 id="heading">Select a Category</h1>
+  <div class="grid">
+    <a class="btn" id="collateral">Collateral</a>
+    <a class="btn" id="visibility">Visibility</a>
+    <a class="btn" id="tableconnect">Table Connect</a>
+  </div>
+  <script>
+    const brand = new URLSearchParams(window.location.search).get('brand');
+    document.getElementById("collateral").href = `assets.html?brand=${brand}&category=Collateral`;
+    document.getElementById("visibility").href = `assets.html?brand=${brand}&category=Visibility`;
+    document.getElementById("tableconnect").href = `assets.html?brand=${brand}&category=Table Connect`;
+    document.getElementById("heading").innerText += ` – ${brand}`;
+  </script>
+</body>
+</html>

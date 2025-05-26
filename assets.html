@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select Asset</title>
+  <style>
+    body { font-family: Arial; text-align: center; background: #fff; padding: 40px; }
+    h1 { margin-bottom: 30px; }
+    .grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .btn { padding: 20px; border: 1px solid #ccc; border-radius: 10px; width: 250px; background: #f2f2f2; cursor: pointer; text-decoration: none; color: #000; }
+    .btn:hover { background: #007BFF; color: #fff; }
+  </style>
+</head>
+<body>
+  <h1 id="heading">Select an Asset</h1>
+  <div class="grid">
+    <a class="btn" id="33cl_mugs">33cl Mugs</a>
+<a class="btn" id="33cl_pilsner_glass">33cl Pilsner Glass</a>
+<a class="btn" id="50cl_mugs">50cl Mugs</a>
+<a class="btn" id="50cl_pilsner_glass">50cl Pilsner Glass</a>
+<a class="btn" id="beer_ice_buckets">Beer/Ice Buckets</a>
+<a class="btn" id="double_door_edge_non_lit">Double Door Edge Non-Lit</a>
+<a class="btn" id="glassware">Glassware</a>
+<a class="btn" id="pitchers">Pitchers</a>
+<a class="btn" id="single_door_edge_non_lit">Single Door Edge Non-Lit</a>
+<a class="btn" id="neon">Neon</a>
+<a class="btn" id="lit_counter_easel">Lit Counter Easel</a>
+<a class="btn" id="lit_easel">Lit Easel</a>
+
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const brand = params.get('brand');
+    const category = params.get('category');
+    document.getElementById("heading").innerText += ` – $Budweiser/Magnum/Corona/HG / $Table Connect`;
+
+    const buttons = document.querySelectorAll(".btn");
+    buttons.forEach(btn => {
+      btn.href = `vendor.html?brand=${brand}&category=${category}&asset=${btn.textContent}`;
+    });
+  </script>
+</body>
+</html>
